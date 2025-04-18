@@ -19,4 +19,4 @@ Get User Profile:
 
 Protected route ที่ต้องใช้ JWT Token  
 ดึงข้อมูล user จาก token  
-ส่ง response: {"id": 6, "name": "Test User", "email": "test4@example.com"}  
+ส่ง Response: { "id": 1, "name": "John Doe", "email": "john@example.com" }
