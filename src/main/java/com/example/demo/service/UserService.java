@@ -13,13 +13,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService {
 
-    // ประกาศตัวแปรที่จำเป็นต้องใช้
-    private final UserRepository userRepo; // ตั้งชื่อสั้นๆ เวลาเรียกใช้จะได้ไม่ยาวเกิน
+    
+    private final UserRepository userRepo;
     private final PasswordEncoder encoder;
     private final AuthenticationManager authManager;
     private final JwtUtils jwtUtils;
 
-    // ใช้ constructor injection ดีกว่า @Autowired เพราะ IDE จะเช็ค null ให้
+    
     public UserService(UserRepository userRepo, 
                       PasswordEncoder encoder,
                       AuthenticationManager authManager,
@@ -30,7 +30,7 @@ public class UserService {
         this.jwtUtils = jwtUtils;
     }
 
-    public User registerUser(String name, String email, String password) {
+    public void registerUser(String name, String email, String password) {
         // เช็คก่อนว่ามี email นี้ในระบบยัง
         if (userRepo.existsByEmail(email)) {
             throw new RuntimeException("email นี้มีในระบบแล้ว");
@@ -43,7 +43,7 @@ public class UserService {
         // เข้ารหัส password ก่อนเก็บลง DB
         user.setPassword(encoder.encode(password));
 
-        return userRepo.save(user);
+        userRepo.save(user);
     }
 
     public String authenticateUser(String email, String password) {

@@ -4,10 +4,10 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data  // ให้ lombok สร้าง getter/setter ให้หมด จะได้ไม่ต้องเขียนเอง
-@NoArgsConstructor  // สร้าง constructor ว่างๆ ให้ JPA ใช้
+@Data  
+@NoArgsConstructor  
 @Entity
-@Table(name = "users")  // ตั้งชื่อ table ให้เป็นพหูพจน์ตามมาตรฐาน
+@Table(name = "users")  
 public class User {
     
     @Id

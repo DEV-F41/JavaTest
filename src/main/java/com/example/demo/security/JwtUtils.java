@@ -23,7 +23,7 @@ public class JwtUtils {
                 .setSubject(userDetails.getUsername())  // เก็บ email ไว้ใน token
                 .setIssuedAt(new Date())  // วันที่สร้าง
                 .setExpiration(new Date(System.currentTimeMillis() + jwtExpiration))  // วันหมดอายุ
-                .signWith(Keys.hmacShaKeyFor(jwtSecret.getBytes()))  // เซ็น token ด้วย secret key
+                .signWith(Keys.hmacShaKeyFor(jwtSecret.getBytes()))  // ใช้ secret key ในการเข้ารหัส
                 .compact();
     }
 

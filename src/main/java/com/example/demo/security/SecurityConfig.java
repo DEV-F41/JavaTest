@@ -12,8 +12,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-@Configuration  // บอก Spring ว่าเป็น config class
-@EnableWebSecurity  // เปิดใช้ Spring Security
+@Configuration  
+@EnableWebSecurity  
 public class SecurityConfig {
 
     private final JwtAuthFilter jwtAuthFilter;
