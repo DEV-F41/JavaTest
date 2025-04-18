@@ -24,7 +24,7 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        // ปิด CSRF เพราะเราใช้ JWT แทน
+        // ปิด CSRF ใช้ JWT แทน
         http.csrf(csrf -> csrf.disable())
             
             // กำหนด URL ไหนเข้าได้บ้าง
